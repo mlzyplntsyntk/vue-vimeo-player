@@ -52,7 +52,7 @@ export default {
     }
   },
   render (h) {
-    return h('div', { attrs: { id: this.elementId } })
+    return h('div', { attrs: { id: this.elementId, style: "width:100%; height:100%;" } })
   },
   watch: {
     videoId: 'update'
@@ -86,6 +86,9 @@ export default {
     },
     unmute (volume = 0.5) {
       return this.player.setVolume(volume)
+    },
+    setCurrentTime(time) {
+      this.player.setCurrentTime(time);
     },
     setEvents () {
       const vm = this
